@@ -1,5 +1,6 @@
 html,body{
 	background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+	text-align: center;
 }
 .borders > * {
     position: fixed;
@@ -81,4 +82,13 @@ html,body{
 audio{
 	margin-top: 100px;
 	margin-left: 100px;
+	visibility: hidden;
+}
+#subtitles{
+	text-align: center;
+	color:white;
+	font-family: Garamond;
+	font-style: italic;
+	max-width: 700px;
+	margin-top: 20vh;
 }
