@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<title>Outliers : Launch</title>
 </head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Crimson+Text" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="main.css">
 <body>
 
@@ -13,17 +17,17 @@
 	  	<div class="right"></div>
   	</div>
 
- <audio id="audiofile" src="speech.mp3" controls></audio><br>
+
+<div id="introsection" class="centered">
+
+ 		<audio id="audiofile" src="speech.mp3" controls></audio><br>
         <div id="subtitles"></div>
         <div id="continue">
-
-        <h3>Dr. APJ Abdul Kalam</h3>
-        <button>Continue</button>
-
-
-
-
+	        <span>DR. APJ ABDUL KALAM, <em>a true outlier</em></span>
         </div>
+</div>
+        
+
 </body>
 
         <script>
@@ -34,9 +38,9 @@
                   { "start": ".01","text": "History " },
                   { "start": ".35","text": "has " },
                   { "start": "0.6","text": "proven" },
-                  {"start": "1.9","text": "that " },
-                  {"start": "2.1","text": "those " },
-                  {"start": "2.5","text": "who " },
+                  {"start": "1.75","text": "that " },
+                  {"start": "2.0","text": "those " },
+                  {"start": "2.4","text": "who " },
                   {"start": "2.8","text": "dare " },
                   {"start": "3.3","text": "to " },
                   {"start": "3.5","text": "imagine " },
@@ -50,7 +54,7 @@
                   {"end": "8","start": "6.8","text": "all " },
                   {"end": "8","start": "7","text": "the " },
                   {"end": "8","start": "7.2","text": "given " },
-                  {"end": "8","start": "8","text": "limitations. " },
+                  {"end": "8","start": "7.7","text": "limitations. " },
                   {"end": "12","start": "9.5","text": "In " },
                   {"end": "12","start": "9.6","text": "every " },
                   {"end": "12","start": "9.8","text": "field " },
@@ -78,10 +82,10 @@
                   {"end": "20","start": "19","text": "of " },
                   {"end": "20","start": "19.25","text": "their " },
                   {"end": "20","start": "19.4","text": "imagination," },
-                  {"end": "22","start": "20.2","text": "they " },
-                  {"end": "22","start": "20.4","text": "change " },
-                  {"end": "22","start": "20.6","text": "the " },
-                  {"end": "22","start": "20.8","text": "world." }
+                  {"end": "22","start": "20.5","text": "they " },
+                  {"end": "22","start": "20.8","text": "change " },
+                  {"end": "22","start": "21","text": "the " },
+                  {"end": "22","start": "21.3","text": "world." }
                   /* ... and so on ... full json is in the demo */
                 ];
             createSubtitle();
@@ -106,9 +110,13 @@
             });
             audioPlayer.play();
             audioPlayer.onended=function(){
-            	document.getElementById('continue').style.visibility='visible';
+            	$('#continue').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
             }
         }(window, document));
 		
         </script>
+        <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
 </html>

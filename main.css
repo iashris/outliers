@@ -1,7 +1,10 @@
 html,body{
-	background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+	background:#00a6f2;
 	text-align: center;
+	height: 100%;
 }
+
+
 .borders > * {
     position: fixed;
     z-index: 100;
@@ -56,6 +59,18 @@ html,body{
 #continue{
 	visibility: hidden;
 }
+.centered{
+	width: 100vw;
+    height: 80vh;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
 .borders > *.right {
     top: 0;
     right: 0;
@@ -68,6 +83,10 @@ html,body{
 }
 
 @media (min-width: 767px){
+.centered{
+	width: 60vw;
+	height:40vh;
+}
 .borders > *.bottom {
     height: 40px;
 }
@@ -83,15 +102,22 @@ html,body{
 }
 
 audio{
-	margin-top: 100px;
-	margin-left: 100px;
 	visibility: hidden;
 }
+#introsection{
+	padding:0px 50px;
+}
 #subtitles{
-	text-align: center;
+	text-align: left;
 	color:white;
-	font-family: Garamond;
-	font-style: italic;
-	max-width: 700px;
-	margin-top: 20vh;
+	font-family: 'Montserrat';
+	font-size:1.2em;
+	line-height: 1.617;
+}
+#continue{
+	margin-top: 15px;
+	font-family: 'Crimson Text';
+	color: white;
+	font-size: 0.9em;
+	opacity: 0.0;
 }
