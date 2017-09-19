@@ -13,4 +13,87 @@
 	  	<div class="right"></div>
   	</div>
 </body>
+
+ <audio id="audiofile" src="speech.mp3" controls></audio><br>
+        <div id="subtitles">boo yeah</div>
+        <script>
+        ( function(win, doc) {
+            var audioPlayer = doc.getElementById("audiofile");
+            var subtitles = doc.getElementById("subtitles");
+            var syncData = [
+                  { "start": ".01","text": "History " },
+                  { "start": ".35","text": "has " },
+                  { "start": "0.7","text": "proven" },
+                  {"start": "1.9","text": "that " },
+                  {"start": "2.2","text": "those " },
+                  {"start": "2.3","text": "who " },
+                  {"start": "2.4","text": "dare " },
+                  {"start": "2.7","text": "to " },
+                  {"start": "2.9","text": "imagine " },
+                  {"start": "3.2","text": "the " },
+                  {"start": "3.5","text": "impossible" },
+                  {"end": "8","start": "4","text": "are " },
+                  {"end": "8","start": "4.5","text": "the " },
+                  {"end": "8","start": "5","text": "ones " },
+                  {"end": "8","start": "5.5","text": "who " },
+                  {"end": "8","start": "6","text": "break " },
+                  {"end": "8","start": "6.5","text": "all " },
+                  {"end": "8","start": "7","text": "the " },
+                  {"end": "8","start": "7.5","text": "given " },
+                  {"end": "8","start": "8","text": "limitations. " },
+                  {"end": "12","start": "9","text": "In " },
+                  {"end": "12","start": "8","text": "every " },
+                  {"end": "12","start": "8","text": "field " },
+                  {"end": "12","start": "8","text": "of " },
+                  {"end": "12","start": "8","text": "human " },
+                  {"end": "12","start": "8","text": "endeavor, "},
+                  {"end": "14","start": "12","text": "the " },
+                  {"end": "14","start": "12","text": "names " },
+                  {"end": "14","start": "12","text": "of " },
+                  {"end": "14","start": "12","text": "the " },
+                  {"end": "14","start": "12","text": "people " },
+                  {"end": "17","start": "14","text": "who " },
+                  {"end": "17","start": "14","text": "imagine " },
+                  {"end": "17","start": "14","text": "the " },
+                  {"end": "17","start": "14","text": "impossible " },
+                  {"end": "17","start": "14","text": "are " },
+                  {"end": "17","start": "14","text": "engraved " },
+                  {"end": "17","start": "14","text": "in " },
+                  {"end": "17","start": "14","text": "our " },
+                  {"end": "17","start": "14","text": "history. " },
+                  {"end": "20","start": "17","text": "By " },
+                  {"end": "20","start": "17","text": "breaking " },
+                  {"end": "20","start": "17","text": "the " },
+                  {"end": "20","start": "17","text": "limits " },
+                  {"end": "20","start": "17","text": "of " },
+                  {"end": "20","start": "17","text": "their " },
+                  {"end": "20","start": "17","text": "imagination," },
+                  {"end": "22","start": "20","text": "they " },
+                  {"end": "22","start": "20","text": "change " },
+                  {"end": "22","start": "20","text": "the " },
+                  {"end": "22","start": "20","text": "world." }
+                  /* ... and so on ... full json is in the demo */
+                ];
+            createSubtitle();
+
+            function createSubtitle()
+            {
+                var element;
+                for (var i = 0; i < syncData.length; i++) {
+                    element = doc.createElement('span');
+                    element.setAttribute("id", "c_" + i);
+                    element.innerText = syncData[i].text + " ";
+                    element.style.visibility='hidden';
+                    subtitles.appendChild(element);
+                }
+            }
+
+            audioPlayer.addEventListener("timeupdate", function(e){
+                syncData.forEach(function(element, index, array){
+                    if( audioPlayer.currentTime >= element.start)
+                        subtitles.children[index].style.visibility = 'visible';
+                });
+            });
+        }(window, document));
+        </script>
 </html>

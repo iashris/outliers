@@ -1,5 +1,5 @@
 html,body{
-	background:yellow;
+	background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
 }
 .borders > * {
     position: fixed;
@@ -76,4 +76,9 @@ html,body{
 .borders > *.top {
     height: 40px;
 }
+}
+
+audio{
+	margin-top: 100px;
+	margin-left: 100px;
 }
