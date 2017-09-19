@@ -15,6 +15,15 @@
 
  <audio id="audiofile" src="speech.mp3" controls></audio><br>
         <div id="subtitles"></div>
+        <div id="continue">
+
+        <h3>Dr. APJ Abdul Kalam</h3>
+        <button>Continue</button>
+
+
+
+
+        </div>
 </body>
 
         <script>
@@ -97,7 +106,7 @@
             });
             audioPlayer.play();
             audioPlayer.onended=function(){
-            	alert('done');
+            	document.getElementById('continue').style.visibility='visible';
             }
         }(window, document));
 		

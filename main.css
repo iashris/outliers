@@ -53,6 +53,9 @@ html,body{
     -o-transform-origin: left center;
     transform-origin: left center;
 }
+#continue{
+	visibility: hidden;
+}
 .borders > *.right {
     top: 0;
     right: 0;
