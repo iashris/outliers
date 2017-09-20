@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>Outliers</title>
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Crimson+Text" rel="stylesheet">
+		<!-- - - - - - - - - - - - - - - - - - - - - 
+		+
+		+    Wondering how this works? 
+		+
+		+    Go to: http://processing.org/
+		+    and: http://processingjs.org/
+		+
+		+ - - - - - - - - - - - - - - - - - - - - -->
+		<style>
+	canvas { 
+		height: 100%;
+		position: fixed;
+		top:0;
+		bottom: 0;
+		z-index: 0;
+		right: 0;
+		display: block; 
+		outline: 0px; 
+		margin-bottom: 1.5em; 
+		display: none;
+	}
+	body,html{
+		background: #282828!important;
+	}
+
+.overlay{
+		text-align: justify;
+	color:white;
+	font-family: 'Montserrat';
+	font-size:0.8em;
+	line-height: 1.617;
+	margin: 2vh 8vw;
+
+	max-width: 90vw;
+}
+
+.uppermenu{
+	position: fixed;
+	height:10vh;
+	background: #282828;
+	width: 100vw;
+}
+.baaki{
+	margin-top: 8vh;
+}
+.logo{
+	height:30%;
+	margin-top:4vh;
+}
+@media (min-width: 767px){
+    .overlay{
+        visibility: visible;
+        max-width: 35vw;
+        margin: 5vh 8vw;
+    }
+canvas{
+	display: block;
+}
+.uppermenu{
+	width: 40vw;
+}
+}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<!--[if lt IE 9]>
+			<script type="text/javascript">alert("Your browser does not support the canvas tag.");</script>
+		<![endif]-->
+		<script src="js/processing.js" type="text/javascript"></script>
+		<script type="text/javascript">
+// convenience function to get the id attribute of generated sketch html element
+function getProcessingSketchId () { return 'PGSandTrickleDown'; }
+</script>
+
+	</head>
+	<body>
+	<div class="borders">
+	  	<div class="top"></div>
+	  	<div class="bottom"></div>
+	  	<div class="left"></div>
+	  	<div class="right"></div>
+  	</div>
+		<div id="content">
+			<div>
+				<canvas id="PGSandTrickleDown" data-processing-sources="res/PG_Sand_Trickle_Down.pde" 
+						width="100%" height="100%">
+					<p>Your browser does not support the canvas tag.</p>
+					<!-- Note: you can put any alternative content here. -->
+				</canvas>
+				<noscript>
+					<p>JavaScript is required to view the contents of this page.</p>
+				</noscript>
+	    	</div>
+		</div>
+
+		<div class="overlay">
+	
+<div class="uppermenu">
+	<img src="img/logo.png" class="logo">
+</div>
+ <br/>
+ <div class="baaki">
++1 for answer in JavaScript, as the question requested. Dragging in many thousands of lines of framework for a one-liner is not sensible. – bobince Feb 3 '09 at 14:06
+17	 	
+If the only work on the whole page that needs to be done with JavaScript is this class name addition, then yes. But I can't see this being the only dynamic part of the page. A library will help with everything else as well. At 30-50kb jQuery is hardly a hit worth discussing. – rfunduk Feb 3 '09 at 14:59
+93	 	
+"A library will help with everything else as well" - apart from learning JavaScript – meouw Feb 3 '09 at 15:24
+13	 	
+What does adding a class to a DOM element have to do with learning the language? document.getElementById('div1').className is as much a library related issue as using jQuery to do the same is. The question was "how can I do that", a thoroughly tested library is the sensible answer. – rfunduk Feb 3 '09 at 20:06
+29	 	
+Adding to Ishmael's answer, you don't have to do className = className +, you can just do className +=. – Doorhandle Feb 22 '14 at 21:34
+1	 	
++1 for answer in JavaScript, as the question requested. Dragging in many thousands of lines of framework for a one-liner is not sensible. – bobince Feb 3 '09 at 14:06
+17	 	
+If the only work on the whole page that needs to be done with JavaScript is this class name addition, then yes. But I can't see this being the only dynamic part of the page. A library will help with everything else as well. At 30-50kb jQuery is hardly a hit worth discussing. – rfunduk Feb 3 '09 at 14:59
+93	 	
+"A library will help with everything else as well" - apart from learning JavaScript – meouw Feb 3 '09 at 15:24
+13	 	
+What does adding a class to a DOM element have to do with learning the language? document.getElementById('div1').className is as much a library related issue as using jQuery to do the same is. The question was "how can I do that", a thoroughly tested library is the sensible answer. – rfunduk Feb 3 '09 at 20:06
+29	 	
+Adding to Ishmael's answer, you don't have to do className = className +, you can just do className +=. – Doorhandle Feb 22 '14 at 21:34
+</div>
+		</div>
+	</body>
+</html>

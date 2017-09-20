@@ -117,8 +117,13 @@ cursor: pointer;
     -o-transform-origin: right center;
     transform-origin: right center;
 }
-
+   .canvas{
+        visibility: hidden;
+    }
 @media (min-width: 767px){
+    .canvas{
+        visibility: visible;
+    }
 .centered{
 	width: 60vw;
 	height:40vh;
