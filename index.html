@@ -17,23 +17,33 @@
 	  	<div class="right"></div>
   	</div>
 
-
+<div id="animdiv"></div>
+<div class="clickableintro centered">
+<span class="play">Enter</span>
+</div>
 <div id="introsection" class="centered">
 
  		<audio id="audiofile" src="speech.mp3" controls></audio><br>
         <div id="subtitles"></div>
         <div id="continue">
-	        <span>DR. APJ ABDUL KALAM, <em>a true outlier</em></span>
+	        <span>DR. APJ ABDUL KALAM, <em>11th President of India and a true outlier</em></span>
         </div>
 </div>
         
+        <div id="footer">
+Skip Intro
+        </div>
 
 </body>
-
+        <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
         <script>
-        ( function(win, doc) {
-            var audioPlayer = doc.getElementById("audiofile");
-            var subtitles = doc.getElementById("subtitles");
+        $(document).ready(function() {
+          console.log("jj");
+            var audioPlayer = document.getElementById("audiofile");
+            var subtitles = document.getElementById("subtitles");
             var syncData = [
                   { "start": ".01","text": "History " },
                   { "start": ".35","text": "has " },
@@ -94,7 +104,7 @@
             {
                 var element;
                 for (var i = 0; i < syncData.length; i++) {
-                    element = doc.createElement('span');
+                    element = document.createElement('span');
                     element.setAttribute("id", "c_" + i);
                     element.innerText = syncData[i].text + " ";
                     element.style.visibility='hidden';
@@ -108,15 +118,19 @@
                         subtitles.children[index].style.visibility = 'visible';
                 });
             });
-            audioPlayer.play();
+            
             audioPlayer.onended=function(){
             	$('#continue').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
             }
-        }(window, document));
-		
+
+            
+        
+		$('.play').click(function(){
+              console.log('hh');
+              $(this).fadeOut("slow");
+              audioPlayer.play();
+            });
+  });
         </script>
-        <script
-  src="https://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
+
 </html>
