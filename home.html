@@ -85,7 +85,7 @@
 			outline: none;
 		}
 		input:focus{
-		border-bottom: 1px solid red;	
+		border-bottom: 1px solid #00a6f2;	
 		}
 
 		@media (min-width: 767px){
@@ -160,14 +160,54 @@ function getProcessingSketchId () { return 'PGSandTrickleDown'; }
 		<div class="section">
 		<h4 class="header">GET IN TOUCH</h4>
 		<p>Outliers isn't really a startup, it is more like communicating a vision that we feel has reached it's right time now. If our idea resonates with you and if you wish to be part of the journey, drop your email here to receive updates from us.</p>
-		<input type="email" placeholder="yourname@example.com">
+		</div>
+		<div class="formsection">
+		<input id="emailAddress" type="email" placeholder="yourname@example.com">
 		<br>
-		<input type="textarea" placeholder="Any message for us">
+		<input id="message" type="textarea" placeholder="What do you think?">
 		<br>
 		<button class="btn">Submit</button>
-
 		</div>
+
 	</div>
 </div>
 </body>
+<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+<script
+src="https://code.jquery.com/jquery-2.2.4.min.js"
+integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+crossorigin="anonymous"></script>
+<script>
+  // Initialize Firebase
+ 
+  $(document).ready(function(){
+  	 var config = {
+    apiKey: "AIzaSyAZ6D3J4QAplsYqrc8MWjBMAFqnGGpLUPA",
+    authDomain: "outliers-7a244.firebaseapp.com",
+    databaseURL: "https://outliers-7a244.firebaseio.com",
+    projectId: "outliers-7a244",
+    storageBucket: "outliers-7a244.appspot.com",
+    messagingSenderId: "820859289787"
+  };
+  firebase.initializeApp(config);
+  var database=firebase.database();
+  var ref=database.ref('registration');
+  	$('.btn').on('click',function(){
+  		var emailAddress=$('#emailAddress').val();
+  		var message=$('#message').val();
+  		var data={
+  			'email':emailAddress,
+  			'message':message,
+  			'time':new Date()
+  		}
+
+  		if(emailAddress.length>5)ref.push(data);
+  		$('.formsection').fadeOut(function() {
+  			$(this).text("Thank You!").fadeIn();
+		});
+  	});
+  });
+
+</script>
+
 </html>
