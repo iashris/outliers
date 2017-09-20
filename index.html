@@ -1,135 +1,135 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Outliers : Launch</title>
+  <title>Outliers : Launch</title>
 </head>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Crimson+Text" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <body>
 
-<div class="borders">
-	  	<div class="top"></div>
-	  	<div class="bottom"></div>
-	  	<div class="left"></div>
-	  	<div class="right"></div>
-  	</div>
+  <div class="borders">
+    <div class="top"></div>
+    <div class="bottom"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
 
-<div id="animdiv"></div>
-<div class="clickableintro centered">
-<span class="play">Enter</span>
-</div>
-<div id="introsection" class="centered">
+  <div id="animdiv"></div>
+  <div class="clickableintro centered">
+    <span class="play">Enter</span>
+  </div>
+  <div id="introsection" class="centered">
 
- 		<audio id="audiofile" src="res/speech.mp3" controls></audio><br>
-        <div id="subtitles"></div>
-        <div id="continue">
-	        <span>DR. APJ ABDUL KALAM, <em>11th President of India and a true outlier</em></span>
-        </div>
+   <audio id="audiofile" src="res/speech.mp3" controls></audio><br>
+   <div id="subtitles"></div>
+   <div id="continue">
+     <span>DR. APJ ABDUL KALAM, <em>11th President of India and a true outlier</em></span>
+   </div>
+ </div>
+ 
+ <div id="footer">
+  Skip Intro
 </div>
-        
-        <div id="footer">
-Skip Intro
-        </div>
 
 </body>
-        <script
-  src="https://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
-        <script>
-        $(document).ready(function() {
-          console.log("jj");
-            var audioPlayer = document.getElementById("audiofile");
-            var subtitles = document.getElementById("subtitles");
-            var syncData = [
-                  {"start": "1.9","text": "Those " },
-                  {"start": "2.2","text": "who " },
-                  {"start": "2.6","text": "dare " },
-                  {"start": "2.9","text": "to " },
-                  {"start": "3.2","text": "imagine " },
-                  {"start": "3.5","text": "the " },
-                  {"start": "4","text": "impossible" },
-                  {"start": "5.3","text": "are " },
-                  {"start": "5.5","text": "the " },
-                  {"start": "5.8","text": "ones " },
-                  {"start": "6.3","text": "who " },
-                  {"end": "8","start": "6.6","text": "break " },
-                  {"end": "8","start": "6.8","text": "all " },
-                  {"end": "8","start": "7","text": "the " },
-                  {"end": "8","start": "7.2","text": "given " },
-                  {"end": "8","start": "7.7","text": "limitations. " },
-                  {"end": "12","start": "9.5","text": "In " },
-                  {"end": "12","start": "9.6","text": "every " },
-                  {"end": "12","start": "9.8","text": "field " },
-                  {"end": "12","start": "10.5","text": "of " },
-                  {"end": "12","start": "10.7","text": "human " },
-                  {"end": "12","start": "11.4","text": "endeavor, "},
-                  {"end": "14","start": "12.7","text": "the " },
-                  {"end": "14","start": "12.9","text": "names " },
-                  {"end": "14","start": "13.1","text": "of " },
-                  {"end": "14","start": "13.3","text": "the " },
-                  {"end": "14","start": "13.6","text": "people " },
-                  {"end": "17","start": "14","text": "who " },
-                  {"end": "17","start": "14.2","text": "imagine " },
-                  {"end": "17","start": "14.6","text": "the " },
-                  {"end": "17","start": "14.85","text": "impossible " },
-                  {"end": "17","start": "15.5","text": "are " },
-                  {"end": "17","start": "15.8","text": "engraved " },
-                  {"end": "17","start": "16.2","text": "in " },
-                  {"end": "17","start": "16.4","text": "our " },
-                  {"end": "17","start": "16.6","text": "history. " },
-                  {"end": "20","start": "17.8","text": "By " },
-                  {"end": "20","start": "18","text": "breaking " },
-                  {"end": "20","start": "18.5","text": "the " },
-                  {"end": "20","start": "18.7","text": "limits " },
-                  {"end": "20","start": "19","text": "of " },
-                  {"end": "20","start": "19.25","text": "their " },
-                  {"end": "20","start": "19.4","text": "imagination," },
-                  {"end": "22","start": "20.5","text": "they " },
-                  {"end": "22","start": "20.8","text": "change " },
-                  {"end": "22","start": "21","text": "the " },
-                  {"end": "22","start": "21.3","text": "world." }
-                  /* ... and so on ... full json is in the demo */
-                ];
-            createSubtitle();
+<script
+src="https://code.jquery.com/jquery-2.2.4.min.js"
+integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function() {
+    console.log("jj");
+    var audioPlayer = document.getElementById("audiofile");
+    var subtitles = document.getElementById("subtitles");
+    var syncData = [
+    {"start": "1.9","text": "Those " },
+    {"start": "2.2","text": "who " },
+    {"start": "2.6","text": "dare " },
+    {"start": "2.9","text": "to " },
+    {"start": "3.2","text": "imagine " },
+    {"start": "3.5","text": "the " },
+    {"start": "4","text": "impossible" },
+    {"start": "5.3","text": "are " },
+    {"start": "5.5","text": "the " },
+    {"start": "5.8","text": "ones " },
+    {"start": "6.3","text": "who " },
+    {"end": "8","start": "6.6","text": "break " },
+    {"end": "8","start": "6.8","text": "all " },
+    {"end": "8","start": "7","text": "the " },
+    {"end": "8","start": "7.2","text": "given " },
+    {"end": "8","start": "7.7","text": "limitations. " },
+    {"end": "12","start": "9.5","text": "In " },
+    {"end": "12","start": "9.6","text": "every " },
+    {"end": "12","start": "9.8","text": "field " },
+    {"end": "12","start": "10.5","text": "of " },
+    {"end": "12","start": "10.7","text": "human " },
+    {"end": "12","start": "11.4","text": "endeavor, "},
+    {"end": "14","start": "12.7","text": "the " },
+    {"end": "14","start": "12.9","text": "names " },
+    {"end": "14","start": "13.1","text": "of " },
+    {"end": "14","start": "13.3","text": "the " },
+    {"end": "14","start": "13.6","text": "people " },
+    {"end": "17","start": "14","text": "who " },
+    {"end": "17","start": "14.2","text": "imagine " },
+    {"end": "17","start": "14.6","text": "the " },
+    {"end": "17","start": "14.85","text": "impossible " },
+    {"end": "17","start": "15.5","text": "are " },
+    {"end": "17","start": "15.8","text": "engraved " },
+    {"end": "17","start": "16.2","text": "in " },
+    {"end": "17","start": "16.4","text": "our " },
+    {"end": "17","start": "16.6","text": "history. " },
+    {"end": "20","start": "17.8","text": "By " },
+    {"end": "20","start": "18","text": "breaking " },
+    {"end": "20","start": "18.5","text": "the " },
+    {"end": "20","start": "18.7","text": "limits " },
+    {"end": "20","start": "19","text": "of " },
+    {"end": "20","start": "19.25","text": "their " },
+    {"end": "20","start": "19.4","text": "imagination," },
+    {"end": "22","start": "20.5","text": "they " },
+    {"end": "22","start": "20.8","text": "change " },
+    {"end": "22","start": "21","text": "the " },
+    {"end": "22","start": "21.3","text": "world." }
+    /* ... and so on ... full json is in the demo */
+    ];
+    createSubtitle();
 
-            function createSubtitle()
-            {
-                var element;
-                for (var i = 0; i < syncData.length; i++) {
-                    element = document.createElement('span');
-                    element.setAttribute("id", "c_" + i);
-                    element.innerText = syncData[i].text + " ";
-                    element.style.visibility='hidden';
-                    subtitles.appendChild(element);
-                }
-            }
+    function createSubtitle()
+    {
+      var element;
+      for (var i = 0; i < syncData.length; i++) {
+        element = document.createElement('span');
+        element.setAttribute("id", "c_" + i);
+        element.innerText = syncData[i].text + " ";
+        element.style.visibility='hidden';
+        subtitles.appendChild(element);
+      }
+    }
 
-            audioPlayer.addEventListener("timeupdate", function(e){
-                syncData.forEach(function(element, index, array){
-                    if( audioPlayer.currentTime >= element.start-1.9){
-                      var child=subtitles.children[index];
-                        if(child.style.visibility=='hidden')$(child).css({opacity: 0.0, visibility: "visible",top:'20px'}).animate({opacity: 1.0,top:0});
-                      }
-                });
-            });
-            
-            audioPlayer.onended=function(){
-            	$('#continue').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
-              var timer=setTimeout(function () { window.location.href='home.html'; }, 3000);
-            }
+    audioPlayer.addEventListener("timeupdate", function(e){
+      syncData.forEach(function(element, index, array){
+        if( audioPlayer.currentTime >= element.start-1.9){
+          var child=subtitles.children[index];
+          if(child.style.visibility=='hidden')$(child).css({opacity: 0.0, visibility: "visible",top:'20px'}).animate({opacity: 1.0,top:0});
+        }
+      });
+    });
+    
+    audioPlayer.onended=function(){
+     $('#continue').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
+     var timer=setTimeout(function () { window.location.href='home.html'; }, 3000);
+   }
 
-            
-        
-		$('.play').click(function(){
-              console.log('hh');
-              $(this).fadeOut("slow");
-              audioPlayer.play();
-            });
+   
+   
+   $('.play').click(function(){
+    console.log('hh');
+    $(this).fadeOut("slow");
+    audioPlayer.play();
   });
-        </script>
+ });
+</script>
 
 </html>

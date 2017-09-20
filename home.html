@@ -1,130 +1,173 @@
 <!DOCTYPE html>
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<title>Outliers</title>
-<link href="https://fonts.googleapis.com/css?family=Montserrat|Crimson+Text" rel="stylesheet">
-		<!-- - - - - - - - - - - - - - - - - - - - - 
-		+
-		+    Wondering how this works? 
-		+
-		+    Go to: http://processing.org/
-		+    and: http://processingjs.org/
-		+
-		+ - - - - - - - - - - - - - - - - - - - - -->
-		<style>
-	canvas { 
-		height: 100%;
-		position: fixed;
-		top:0;
-		bottom: 0;
-		z-index: 0;
-		right: 0;
-		display: block; 
-		outline: 0px; 
-		margin-bottom: 1.5em; 
-		display: none;
-	}
-	body,html{
-		background: #282828!important;
-	}
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Outliers</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Crimson+Text" rel="stylesheet">
+	<style>
+		canvas { 
+			height: 100%;
+			position: fixed;
+			top:0;
+			bottom: 0;
+			z-index: 0;
+			right: 0;
+			display: block; 
+			outline: 0px; 
+			margin-bottom: 1.5em; 
+			display: none;
+		}
+		body,html{
+			background: #282828!important;
+		}
 
-.overlay{
-		text-align: justify;
-	color:white;
-	font-family: 'Montserrat';
-	font-size:0.8em;
-	line-height: 1.617;
-	margin: 2vh 8vw;
+		.overlay{
+			text-align: justify;
+			color:white;
+			font-family: 'Montserrat';
+			font-size:0.8em;
+			line-height: 1.917;
+			margin: 2vh 8vw;
 
-	max-width: 90vw;
-}
+			max-width: 90vw;
+		}
 
-.uppermenu{
-	position: fixed;
-	height:10vh;
-	background: #282828;
-	width: 100vw;
-}
-.baaki{
-	margin-top: 8vh;
-}
-.logo{
-	height:30%;
-	margin-top:4vh;
-}
-@media (min-width: 767px){
-    .overlay{
-        visibility: visible;
-        max-width: 35vw;
-        margin: 5vh 8vw;
-    }
-canvas{
-	display: block;
-}
-.uppermenu{
-	width: 40vw;
-}
-}
-		</style>
-		<link rel="stylesheet" type="text/css" href="css/main.css">
+		.uppermenu{
+			position: fixed;
+			height:10vh;
+			background: #282828;
+			width: 100vw;
+		}
+		.baaki{
+			margin-top: 8vh;
+		}
+		.logo{
+			height:30%;
+			margin-top:4vh;
+		}
+		.header{
+			border-bottom: 2px solid white;
+			max-width: 30%;
+			padding-bottom: 0px;
+		}
+		.section{
+			margin-top: 40px;
+
+		}
+		input{
+			margin-top: 15px;
+			background: none;
+			outline: none;
+			border:0;
+			border-bottom: 1px solid white;
+			transition:1s all ease;
+			width: 80%;
+			color: white;
+			padding-bottom: 12px;
+			font-family: 'Montserrat';
+		}
+		.btn{
+			padding:10px;
+			border:2px solid white;
+			color:white;
+			transition: 0.5s all ease;
+			background: none;
+			font-family: 'Montserrat';
+			font-size: 1.2em;
+			cursor: pointer;
+			margin-top: 5vh;
+			margin-bottom: 5vh;
+			outline: none;
+		}
+		.btn:hover{
+			color:#282828;
+			background: white;
+			outline: none;
+		}
+		input:focus{
+		border-bottom: 1px solid red;	
+		}
+
+		@media (min-width: 767px){
+			.overlay{
+				visibility: visible;
+				max-width: 35vw;
+				margin: 5vh 8vw;
+			}
+			canvas{
+				display: block;
+			}
+			.uppermenu{
+				width: 40vw;
+			}
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 		<!--[if lt IE 9]>
 			<script type="text/javascript">alert("Your browser does not support the canvas tag.");</script>
-		<![endif]-->
-		<script src="js/processing.js" type="text/javascript"></script>
-		<script type="text/javascript">
+			<![endif]-->
+			<script src="js/processing.js" type="text/javascript"></script>
+			<script type="text/javascript">
 // convenience function to get the id attribute of generated sketch html element
 function getProcessingSketchId () { return 'PGSandTrickleDown'; }
 </script>
 
-	</head>
-	<body>
+</head>
+<body>
 	<div class="borders">
-	  	<div class="top"></div>
-	  	<div class="bottom"></div>
-	  	<div class="left"></div>
-	  	<div class="right"></div>
-  	</div>
-		<div id="content">
-			<div>
-				<canvas id="PGSandTrickleDown" data-processing-sources="res/PG_Sand_Trickle_Down.pde" 
-						width="100%" height="100%">
-					<p>Your browser does not support the canvas tag.</p>
-					<!-- Note: you can put any alternative content here. -->
-				</canvas>
-				<noscript>
-					<p>JavaScript is required to view the contents of this page.</p>
-				</noscript>
-	    	</div>
+		<div class="top"></div>
+		<div class="bottom"></div>
+		<div class="left"></div>
+		<div class="right"></div>
+	</div>
+	<div id="content">
+		<div>
+			<canvas id="PGSandTrickleDown" data-processing-sources="res/PG_Sand_Trickle_Down.pde" 
+			width="100%" height="100%">
+			<p>Your browser does not support the canvas tag.</p>
+			<!-- Note: you can put any alternative content here. -->
+		</canvas>
+		<noscript>
+			<p>JavaScript is required to view the contents of this page.</p>
+		</noscript>
+	</div>
+</div>
+
+<div class="overlay">
+	
+	<div class="uppermenu">
+		<img src="img/logo.png" class="logo">
+	</div>
+	<br/>
+	<div class="baaki">
+		<div class="section">
+		<h4 class="header">VISION</h4>
+		<p>Outliers is a platform to bring young visionaries, technologists, designers and thinkers together to innovate for India using an open source collaborative platform.
+</p>
+<p>We aim to bring all the crazy folks of the country together who stand out from the crowd, the ones who see things differently and envision the future for India like nobody else does.
 		</div>
 
-		<div class="overlay">
-	
-<div class="uppermenu">
-	<img src="img/logo.png" class="logo">
-</div>
- <br/>
- <div class="baaki">
-+1 for answer in JavaScript, as the question requested. Dragging in many thousands of lines of framework for a one-liner is not sensible. – bobince Feb 3 '09 at 14:06
-17	 	
-If the only work on the whole page that needs to be done with JavaScript is this class name addition, then yes. But I can't see this being the only dynamic part of the page. A library will help with everything else as well. At 30-50kb jQuery is hardly a hit worth discussing. – rfunduk Feb 3 '09 at 14:59
-93	 	
-"A library will help with everything else as well" - apart from learning JavaScript – meouw Feb 3 '09 at 15:24
-13	 	
-What does adding a class to a DOM element have to do with learning the language? document.getElementById('div1').className is as much a library related issue as using jQuery to do the same is. The question was "how can I do that", a thoroughly tested library is the sensible answer. – rfunduk Feb 3 '09 at 20:06
-29	 	
-Adding to Ishmael's answer, you don't have to do className = className +, you can just do className +=. – Doorhandle Feb 22 '14 at 21:34
-1	 	
-+1 for answer in JavaScript, as the question requested. Dragging in many thousands of lines of framework for a one-liner is not sensible. – bobince Feb 3 '09 at 14:06
-17	 	
-If the only work on the whole page that needs to be done with JavaScript is this class name addition, then yes. But I can't see this being the only dynamic part of the page. A library will help with everything else as well. At 30-50kb jQuery is hardly a hit worth discussing. – rfunduk Feb 3 '09 at 14:59
-93	 	
-"A library will help with everything else as well" - apart from learning JavaScript – meouw Feb 3 '09 at 15:24
-13	 	
-What does adding a class to a DOM element have to do with learning the language? document.getElementById('div1').className is as much a library related issue as using jQuery to do the same is. The question was "how can I do that", a thoroughly tested library is the sensible answer. – rfunduk Feb 3 '09 at 20:06
-29	 	
-Adding to Ishmael's answer, you don't have to do className = className +, you can just do className +=. – Doorhandle Feb 22 '14 at 21:34
-</div>
+		<div class="section">
+		<h4 class="header">MODEL</h4>
+		<p>There are visionaries with great ideas but not many skills, people with many skillsets without a larger vision, people who know the ground realities but haven't been heard before. We want to get them all together in a platform that lets them discuss, propose projects, secure funding, implement and track their projects, get feedback and make connections. We want all of it to be open sourced and a culture of doing work where we all have a clear vision - make India a better place for us all, we will do this together.</p>
 		</div>
-	</body>
+
+		<div class="section">
+		<h4 class="header">BACKGROUND</h4>
+		<p>Outliers was born through a series of discussions, ideations and conversations we had as undergrads in IIT Kharagpur. We realized that we are a country of immense talent which is very poorly managed. We innovate, but often unconsciously, not making use of our powers together. Outliers aims to make the efforts more conscious, in a directed manner. As innovators ourselves, we understand how crucial getting encouragement and support is when we start and we aim to do just that.</p>
+		</div>
+
+		<div class="section">
+		<h4 class="header">GET IN TOUCH</h4>
+		<p>Outliers isn't really a startup, it is more like communicating a vision that we feel has reached it's right time now. If our idea resonates with you and if you wish to be part of the journey, drop your email here to receive updates from us.</p>
+		<input type="email" placeholder="yourname@example.com">
+		<br>
+		<input type="textarea" placeholder="Any message for us">
+		<br>
+		<button class="btn">Submit</button>
+
+		</div>
+	</div>
+</div>
+</body>
 </html>
