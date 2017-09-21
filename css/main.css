@@ -60,7 +60,7 @@ html,body{
 	visibility: hidden;
 }
 #animdiv{
-    background:#00a6f2;
+    background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
     position: fixed;
     z-index: 0;
     width: 100%;
@@ -70,7 +70,11 @@ html,body{
     right: 0;
     left: 0;
   shape-padding: 20px;
-  transition: all 1s ease; 
+  transition: all 0.3s ease; 
+    shape-inside: polygon(50vw 50vh ,50vw 50vh , 50vw 50vh, 50vw 50vh);
+  -webkit-clip-path: polygon(50vw 50vh ,50vw 50vh , 50vw 50vh, 50vw 50vh);
+}
+#animdiv.triggered{
     shape-inside: polygon(0 0,  100vw 0, 100vw 100vh, 0 100vh);
   -webkit-clip-path: polygon(0 0,  100vw 0, 100vw 100vh, 0 100vh);
 }
@@ -84,7 +88,8 @@ cursor: pointer;
 .play{
     width: 100px;
     height: 100px !important;
-    color: white;
+    color:#00a6f2;
+    background: white;
     text-align: center;
     font-size: 1.5em;
     border:2px solid white;
@@ -93,8 +98,7 @@ cursor: pointer;
     border-radius: 30px;
 }
 .play:hover{
-    color:#00a6f2;
-    background: white;
+    
 }
 .centered{
 	width: 100vw;

@@ -25,8 +25,8 @@
 			text-align: justify;
 			color:white;
 			font-family: 'Montserrat';
-			font-size:0.8em;
-			line-height: 1.917;
+			font-size:0.85em;
+			line-height: 1.717;
 			margin: 2vh 8vw;
 
 			max-width: 90vw;
@@ -52,7 +52,8 @@
 		}
 		.section{
 			margin-top: 40px;
-
+			opacity: 0;
+			width: 92%;
 		}
 		input{
 			margin-top: 15px;
@@ -141,10 +142,7 @@ function getProcessingSketchId () { return 'PGSandTrickleDown'; }
 	<br/>
 	<div class="baaki">
 		<div class="section">
-		<h4 class="header">VISION</h4>
-		<p>Outliers is a platform to bring young visionaries, technologists, designers and thinkers together to innovate for India using an open source collaborative platform.
-</p>
-<p>We aim to bring all the crazy folks of the country together who stand out from the crowd, the ones who see things differently and envision the future for India like nobody else does.
+		<p>Outliers is a collaborative platform designed with a goal to promote open sourced tech and design innovations for the Indian context.
 		</div>
 
 		<div class="section">
@@ -181,6 +179,9 @@ crossorigin="anonymous"></script>
   // Initialize Firebase
  
   $(document).ready(function(){
+  	$(".section").each(function(i) {
+  $(this).delay(i*500).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
+});
   	 var config = {
     apiKey: "AIzaSyAZ6D3J4QAplsYqrc8MWjBMAFqnGGpLUPA",
     authDomain: "outliers-7a244.firebaseapp.com",
